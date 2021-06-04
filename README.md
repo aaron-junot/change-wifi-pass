@@ -4,8 +4,24 @@ This repository contains a small script used to change the wifi password. I set 
 
 ## Usage
 
+Basic Usage:
 ```bash
 python change_pass.py
+```
+
+I set this up on a crontab with a little run.sh script that looks like this:
+```bash
+#!/bin/bash
+
+cd ~/path/to/change-wifi-pass
+source ./virtualenv/bin/activate
+python change_pass.py
+```
+
+Then I set a cronjob that runs it at 8 every morning:
+```bash
+$ crontab -l
+0 8 * * * ~/path/to/run.sh
 ```
 
 ## Credits
