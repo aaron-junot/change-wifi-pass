@@ -32,6 +32,7 @@ r = s.post(f"https://{ip}:{port}/login.cgi", headers=headers, data=params, verif
 # Create a new password
 words = open("wordlist.txt", "r").read().splitlines()
 new_password = random.choice(words).capitalize() + random.choice(words).capitalize()
+# TODO: Make sure new_password is >7 characters because a Fire Tablet for kids requires 8 characters for the PSK
 
 
 # Tell the router to update the password
